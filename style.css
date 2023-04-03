@@ -24,7 +24,7 @@ h1{
     cursor: pointer;
 }
 
-cell:nth-child(3n) {
+.cell:nth-child(3n) {
     border-right: none;
 }
 .cell:nth-child(6) ~ .cell {
@@ -37,4 +37,32 @@ cell:nth-child(3n) {
     display: flex;
     flex-wrap: wrap;
     margin: 4rem;
+}
+
+.white {
+    color: white;
+}
+
+#gameEnd {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0;
+    background-color: black;
+}
+
+#gameEnd p, #gameEnd input {
+    position: fixed;
+    top: 45%;
+    left: 45%;
+    transform: translate (-45%, -45%);
+    text-align: center;
+}
+
+#gameEnd p {
+    margin-top: 2rem;
 }
