@@ -12,9 +12,20 @@ cells.forEach(cell => {
 function playGame(e) {
     e.target.innerHTML = playerTurn;
 
+    if (checkWin(playerTurn)) {
+        updateGameStatus("wins" + playerTurn);
+        return endGame();
+    } else if (checkDraw()) {
+        updateGameStatus("draw");
+        return endGame();
+    }
+
     updateGameStatus(playerTurn); 
     playerTurn == playerOne ? playerTurn = playerTwo : playerTurn = playerOne;
 }
+
+function checkWin(playerTurn) {}
+function checkDraw() {}
 
 function updateGameStatus(status){
     let statusText;
@@ -42,7 +53,7 @@ function updateGameStatus(status){
 }
 
 function endGame() { 
-    document.getElementById('gameEnd') 
+    document.getElementById('gameEnd').style.display = "block" 
 }
 
 function reloadGame() { 
